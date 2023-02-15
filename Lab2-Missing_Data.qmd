@@ -40,7 +40,7 @@ library(modelsummary) # table output for models
 
 # 2. Missing Data Patterns
 
--   Use the `naniar fucntion plot_pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`.
+-   Use the `ggmice` `plot_pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`.
 
     ```{r}
 
