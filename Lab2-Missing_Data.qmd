@@ -15,7 +15,6 @@ editor: visual
 ```{r}
 #| message: false
 #| 
-
 library(tidyverse)
 library(skimr)
 library(mice) # missing data analysis and visualization
@@ -39,8 +38,6 @@ library(modelsummary) # table output for models
 
 ```
 
-The dataset has 4106 observations and 5 variables. The majority of data is complete (96.7%). The `lpr` variable has the most missingness (7.8%).
-
 # 2. Missing Data Patterns
 
 -   Use the `naniar fucntion plot_pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`.
@@ -51,11 +48,7 @@ The dataset has 4106 observations and 5 variables. The majority of data is compl
 
 -   In a sentence or two, tell me how many cases showed the most popular pattern and describe to me what that pattern is.
 
-    The most popular pattern is the first pattern. This pattern describes the number of entries (3464) that have no missingness on any of the variables.
-
-Which variable had the largest number of missing observations?
-
-`lpr` has the largest number of missing observations (320) (7.8%).
+    Which variable had the largest number of missing observations?
 
 # 3. Missing data dummies
 
@@ -90,7 +83,7 @@ The `plot_pattern` function is very slick and easy to use. But you should also k
 
 *Tip*: If you are successful, you will have a tibble with 11 rows and five columns. The rightmost column will be named `n`. If you look above, the results of this exercise should match up closely with the `md.pattern()` from the previous section.
 
-# 5. Missing Data Plot
+# 5. Missing data plot
 
 Run the code I've provided, below. If you are successful, it will return a nice missing data pattern plot. I recommend spending some time going through that code to make sure you fully understand what it's doing. Feel free to make any adjustments to the figure 🙂
 
@@ -117,7 +110,7 @@ my_md_pattern %>%
 
 ```
 
-# 6. Missing Mechanism
+# 6. Missing mechanisms
 
 -   Using what we learned in class, can you determine if the missingness observed `d` is MAR or MCAR? How? Show me.
 
@@ -132,7 +125,7 @@ my_md_pattern %>%
 
 -   What can you conclude about missing data mechanisms?
 
-# 7. Simple Impute
+# 7. Simple impute
 
 -   Okay, we're finally ready to impute. impute with the \`my_md_missing\` data set and save the results as `imp1`. If you get warning messages, worry but don't worry. We'll address those in the next section.
 
