@@ -130,15 +130,16 @@ my_md_pattern %>%
 
 ```
 
--   What is your conclusion?
-
-    There is evidence that the data are MAR. This was supported by conducting several logistic regressions where each predictor variable was regressed onto the missing dummy variable.
+-   What can you conclude about missing data mechanisms?
 
 # 7. Simple Impute
 
--   Okay, we're finally ready to impute. impute with the \`my_md_missing\` data set and save the results as \`imp1\`. If you get warning messages, worry but don't worry. We'll address those in the next section.
+-   Okay, we're finally ready to impute. impute with the \`my_md_missing\` data set and save the results as `imp1`. If you get warning messages, worry but don't worry. We'll address those in the next section.
 
     ```{r}
+
+    m=5 
+
     ```
 
 # 8. Inspect
@@ -166,7 +167,7 @@ It may not look like it, but we went along with a lot of default settings with t
 
 # 9. Let's use `mice()` again, but with a few improvements:
 
--   In our data statement, enter in `select(my_md_missing, iqv:lpo)`
+-   In our data statement, just select the four variables we want to impute data for
 
     ```{r}
 
@@ -212,7 +213,7 @@ If you do this right, you'll get four similar--but slightly different--values fo
 
 # 12. Fit the model(s)
 
--   Run `mice` to fit a model with multiple imputated data sets (make sure to not include extraneous variables
+-   Run `mice` again to fit a model with multiple imputed data sets (make sure to not include extraneous variables
 
 ```{r}
 
@@ -262,6 +263,10 @@ Finally, execute `summary(pooled_fit, conf.int = TRUE)` to get your pooled summa
 
 -   Get rid of all the NAs
 
+    ```{r}
+
+    ```
+
 -   Run a lm model (use `lm`). The regression model you are fitting is \`lpo \~ lpr\`. Save the results as \`fit_listwise\`.
 
 ```{r}
@@ -289,7 +294,6 @@ Run a lm model (`lpo ~ lpr)` using `with` and store as `mean_missing` . Use the 
 -   Impute the missing data with a regression approach (set m = 1).
 
     ```{r}
-
 
 
     ```
